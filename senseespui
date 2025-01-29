@@ -652,6 +652,9 @@ function EspInterface.AddInstance(instance, options)
 	return cache[instance][1];
 end
 
+function EspInterface.Load()
+	assert(not EspInterface._hasLoaded, "Esp has already been loaded.");
+
 	local function createObject(player)
 		EspInterface._objectCache[player] = {
 			EspObject.new(player, EspInterface),
